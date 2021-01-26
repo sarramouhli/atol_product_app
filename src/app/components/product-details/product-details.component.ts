@@ -13,11 +13,13 @@ export class ProductDetailsComponent {
   currentData: any;
   constructor(
     public dialogRef: MatDialogRef<ProductDetailsComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: ProductElement, public productService: ProductService) {
+    @Inject(MAT_DIALOG_DATA) public data: ProductElement,
+    public productService: ProductService
+  ) {
     this.currentData = { ...data };
   }
   saveUpadate(data) {
-    this.productService.update(data._id, data).subscribe(result => {
+    this.productService.update(data._id, data).subscribe((result) => {
       console.log(result);
     });
   }

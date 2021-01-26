@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
 import { ProductService } from 'src/app/services/product.service';
 
@@ -7,7 +7,7 @@ import { ProductService } from 'src/app/services/product.service';
   templateUrl: './product-create.component.html',
   styleUrls: ['./product-create.component.css']
 })
-export class ProductCreateComponent implements OnInit {
+export class ProductCreateComponent {
   product = {
     _id: '',
     name: '',
@@ -19,26 +19,20 @@ export class ProductCreateComponent implements OnInit {
   };
   submitted = false;
 
-  constructor(private productService: ProductService, public dialogRef: MatDialogRef<ProductCreateComponent>) { }
-
-  ngOnInit(): void {
-  }
+  constructor(
+    private productService: ProductService,
+    public dialogRef: MatDialogRef<ProductCreateComponent>
+  ) {}
 
   createProduct(data): void {
-
-    this.productService.create(data)
-      .subscribe(
-        response => {
-          this.submitted = true;
-          this.product = response;
-        },
-        error => {
-          console.log(error);
-        });
+    this.productService.create(data).subscribe(
+      (response) => {
+        this.submitted = true;
+        this.product = response;
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
   }
-
-  onNoClick() {
-
-  }
-
 }
