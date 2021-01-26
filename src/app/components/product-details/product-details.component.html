@@ -1,0 +1,33 @@
+<div mat-dialog-content>
+  <mat-form-field>
+    <mat-label>Name</mat-label>
+    <input matInput [(ngModel)]="data.name">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>type</mat-label>
+    <input matInput [(ngModel)]="data.type">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>price</mat-label>
+    <input type="number" matInput [(ngModel)]="data.price">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>rating</mat-label>
+    <input type="number" matInput [(ngModel)]="data.rating">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>warranty_years</mat-label>
+    <input type="number" matInput [(ngModel)]="data.warranty_years">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>available</mat-label>
+    <mat-select [(ngModel)]="data.available" [(value)]="data.available">
+      <mat-option value="true">true</mat-option>
+      <mat-option value="false">false</mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">cancel</button>
+  <button mat-button (click)="saveUpadate(data)" [mat-dialog-close]="data" cdkFocusInitial>Ok</button>
+</div>
