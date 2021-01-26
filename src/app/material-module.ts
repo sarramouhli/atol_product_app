@@ -1,4 +1,4 @@
-import { ModuleWithProviders, NgModule } from "@angular/core";
+import { ModuleWithProviders, NgModule } from '@angular/core';
 import { MatNativeDateModule, MAT_DATE_LOCALE } from '@angular/material/core';
 import { MatIconRegistry } from '@angular/material/icon';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
@@ -36,90 +36,89 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatTreeModule } from '@angular/material/tree';
 
 @NgModule({
-    imports: [
-        MatAutocompleteModule,
-        MatBadgeModule,
-        MatButtonModule,
-        MatButtonToggleModule,
-        MatCardModule,
-        MatCheckboxModule,
-        MatChipsModule,
-        MatStepperModule,
-        MatDatepickerModule,
-        MatDialogModule,
-        MatExpansionModule,
-        MatFormFieldModule,
-        MatGridListModule,
-        MatIconModule,
-        MatInputModule,
-        MatListModule,
-        MatMenuModule,
-        MatPaginatorModule,
-        MatProgressBarModule,
-        MatProgressSpinnerModule,
-        MatRadioModule,
-        MatRippleModule,
-        MatSelectModule,
-        MatSidenavModule,
-        MatSliderModule,
-        MatSlideToggleModule,
-        MatSnackBarModule,
-        MatSortModule,
-        MatTableModule,
-        MatTabsModule,
-        MatToolbarModule,
-        MatTooltipModule,
-        MatTreeModule,
-        MatNativeDateModule
-    ],
-    exports: [
-        MatAutocompleteModule,
-        MatBadgeModule,
-        MatButtonModule,
-        MatButtonToggleModule,
-        MatCardModule,
-        MatCheckboxModule,
-        MatChipsModule,
-        MatStepperModule,
-        MatDatepickerModule,
-        MatDialogModule,
-        MatExpansionModule,
-        MatFormFieldModule,
-        MatGridListModule,
-        MatIconModule,
-        MatInputModule,
-        MatListModule,
-        MatMenuModule,
-        MatPaginatorModule,
-        MatProgressBarModule,
-        MatProgressSpinnerModule,
-        MatRadioModule,
-        MatRippleModule,
-        MatSelectModule,
-        MatSidenavModule,
-        MatSliderModule,
-        MatSlideToggleModule,
-        MatSnackBarModule,
-        MatSortModule,
-        MatTableModule,
-        MatTabsModule,
-        MatToolbarModule,
-        MatTooltipModule,
-        MatTreeModule,
-        MatNativeDateModule
-    ],
-    providers: [
-    ]
+  imports: [
+    MatAutocompleteModule,
+    MatBadgeModule,
+    MatButtonModule,
+    MatButtonToggleModule,
+    MatCardModule,
+    MatCheckboxModule,
+    MatChipsModule,
+    MatStepperModule,
+    MatDatepickerModule,
+    MatDialogModule,
+    MatExpansionModule,
+    MatFormFieldModule,
+    MatGridListModule,
+    MatIconModule,
+    MatInputModule,
+    MatListModule,
+    MatMenuModule,
+    MatPaginatorModule,
+    MatProgressBarModule,
+    MatProgressSpinnerModule,
+    MatRadioModule,
+    MatRippleModule,
+    MatSelectModule,
+    MatSidenavModule,
+    MatSliderModule,
+    MatSlideToggleModule,
+    MatSnackBarModule,
+    MatSortModule,
+    MatTableModule,
+    MatTabsModule,
+    MatToolbarModule,
+    MatTooltipModule,
+    MatTreeModule,
+    MatNativeDateModule
+  ],
+  exports: [
+    MatAutocompleteModule,
+    MatBadgeModule,
+    MatButtonModule,
+    MatButtonToggleModule,
+    MatCardModule,
+    MatCheckboxModule,
+    MatChipsModule,
+    MatStepperModule,
+    MatDatepickerModule,
+    MatDialogModule,
+    MatExpansionModule,
+    MatFormFieldModule,
+    MatGridListModule,
+    MatIconModule,
+    MatInputModule,
+    MatListModule,
+    MatMenuModule,
+    MatPaginatorModule,
+    MatProgressBarModule,
+    MatProgressSpinnerModule,
+    MatRadioModule,
+    MatRippleModule,
+    MatSelectModule,
+    MatSidenavModule,
+    MatSliderModule,
+    MatSlideToggleModule,
+    MatSnackBarModule,
+    MatSortModule,
+    MatTableModule,
+    MatTabsModule,
+    MatToolbarModule,
+    MatTooltipModule,
+    MatTreeModule,
+    MatNativeDateModule
+  ],
+  providers: []
 })
 export class AtosMaterialModule {
-    constructor(public matIconRegistry: MatIconRegistry) {
-        // matIconRegistry.registerFontClassAlias('fontawesome', 'fa');
-    }
+  constructor(public matIconRegistry: MatIconRegistry) {
+    // matIconRegistry.registerFontClassAlias('fontawesome', 'fa');
+  }
 
-    static forRoot(): ModuleWithProviders<AtosMaterialModule> {
-        return {
-            ngModule: AtosMaterialModule,
-            providers: [MatIconRegistry]
-        };
-    }
+  static forRoot(): ModuleWithProviders<AtosMaterialModule> {
+    return {
+      ngModule: AtosMaterialModule,
+      providers: [MatIconRegistry]
+    };
+  }
 }

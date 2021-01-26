@@ -13,35 +13,42 @@ import { ProductCreateComponent } from '../product-create/product-create.compone
 @Component({
   selector: 'product-list-coponent',
   styleUrls: ['product-list.component.css'],
-  templateUrl: 'product-list.component.html',
+  templateUrl: 'product-list.component.html'
 })
 export class ProductListComponent implements OnInit {
-  displayedColumns: string[] = ['_id', 'name', 'type', 'price', 'rating', 'warranty_years', 'available', 'action'];
-
+  displayedColumns: string[] = [
+    '_id',
+    'name',
+    'type',
+    'price',
+    'rating',
+    'warranty_years',
+    'available',
+    'action'
+  ];
 
   dataSource;
   currentElement;
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
-  constructor(public dialog: MatDialog, public productService: ProductService) {
-
-  }
+  constructor(
+    public dialog: MatDialog,
+    public productService: ProductService
+  ) {}
   ngOnInit() {
-    this.productService.readAll().subscribe(result => {
+    this.productService.readAll().subscribe((result) => {
       this.dataSource = new MatTableDataSource<ProductElement>(result);
       this.dataSource.paginator = this.paginator;
-    })
-
+    });
   }
   openDialogEdit(data, index): void {
-    this.currentElement = index
+    this.currentElement = index;
     const dialogRef = this.dialog.open(ProductDetailsComponent, {
       width: '500px',
-      data: data,
+      data: data
     });
 
-    dialogRef.beforeClosed().subscribe(result => {
-
+    dialogRef.beforeClosed().subscribe((result) => {
       this.dataSource.data[this.currentElement] = result;
       this.dataSource._updateChangeSubscription(); // <-- Refresh the datasource
     });
@@ -49,26 +56,22 @@ export class ProductListComponent implements OnInit {
 
   openDialogCreate(): void {
     const dialogRef = this.dialog.open(ProductCreateComponent, {
-      width: '500px',
-
+      width: '500px'
     });
 
-    dialogRef.beforeClosed().subscribe(result => {
-
+    dialogRef.beforeClosed().subscribe((result) => {
       this.dataSource.data.push(result);
       this.dataSource._updateChangeSubscription(); // <-- Refresh the datasource
     });
   }
 
   deleteProduct(element) {
-
     if (element && element._id > -1) {
-      const index = this.dataSource.data.findIndex((e) => e._id === element._id);
-      this.dataSource.data.splice(index , 1);
+      const index = this.dataSource.data.findIndex(
+        (e) => e._id === element._id
+      );
+      this.dataSource.data.splice(index, 1);
       this.dataSource._updateChangeSubscription(); // <-- Refresh the datasource
     }
-
   }
 }
-
-
